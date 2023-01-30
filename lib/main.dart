@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:mygithubwebpage/misc/go_router_builder.dart';
 // import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:mygithubwebpage/misc/theme.dart';
 
 void main() async {
   runApp(const ProviderScope(child: MyApp()));
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (BuildContext context, Widget? child) {
         return MaterialApp.router(
-          theme: ThemeData(
+          theme: CustomTheme.myTheme.copyWith(
             textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
           ),
           title: "Ericsson",
