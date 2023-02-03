@@ -16,6 +16,7 @@ abstract class CustomTheme {
   static const gold = Color(0xffd9b08c);
   static const gold_light = Color(0xffffcb9a);
   static const white = Color(0xffd1e8e2);
+  static const homeShadowColor = gold;
   static final myTheme = ThemeData(
     colorScheme: const ColorScheme(
       brightness: Brightness.light,
