@@ -19,8 +19,22 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     if (!kDebugMode) {
-      return const Center(
-        child: Text("Website Currently Under Construction"),
+      return Center(
+        child: Text(
+          "Website Currently Under Construction",
+          style: TextStyle(
+            fontSize: 100.sp,
+            fontWeight: FontWeight.bold,
+            color: CustomTheme.white,
+            shadows: const [
+              Shadow(
+                blurRadius: 10,
+                color: CustomTheme.gold_light,
+                offset: Offset(1, 1),
+              ),
+            ],
+          ),
+        ),
       );
     }
 
