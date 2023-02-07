@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:mygithubwebpage/misc/provider/navbar.dart';
 
 class AboutMeScreen extends StatefulHookConsumerWidget {
   const AboutMeScreen({super.key});
@@ -12,15 +13,17 @@ class _AboutMeScreenState extends ConsumerState<AboutMeScreen> {
   @override
   void initState() {
     super.initState();
-    afterInit();
+    WidgetsBinding.instance.addPostFrameCallback((_) => postInit());
   }
 
-  void afterInit() {
-    // ref.read(navigationBarIndexProvider.notifier).setIndex(1);
+  void postInit() {
+    ref.read(navigationBarIndexProvider.notifier).state = 5;
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      child: const Text("About Me"),
+    );
   }
 }

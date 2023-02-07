@@ -1,59 +1,100 @@
 import 'package:go_router/go_router.dart';
 import 'package:flutter/material.dart';
+import 'package:mygithubwebpage/home/home_screen.dart';
 import 'package:mygithubwebpage/misc/theme.dart';
 import 'package:mygithubwebpage/misc/widgets/navigationbar.dart';
 import 'package:mygithubwebpage/pages/aboutme/aboutme_screen.dart';
 import 'package:mygithubwebpage/pages/myprojects/myprojects_screen.dart';
 
-import '../home/home_screen.dart';
-
 final GoRouter $rootRouter = GoRouter(
   initialLocation: Routes.home.addSlash,
   routes: [
     ShellRoute(
-        routes: [
-          GoRoute(
-            path: Routes.home.addSlash,
-            name: Routes.home,
-            builder: (context, state) => const HomeScreen(),
+      routes: [
+        GoRoute(
+          path: Routes.home.addSlash,
+          name: Routes.home,
+          pageBuilder: (context, state) => CustomTransitionPage<void>(
+            key: state.pageKey,
+            child: const HomeScreen(),
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) {
+              if (state.fullpath != Routes.home.addSlash) {
+                return ScaleTransition(
+                    scale: animation.drive(
+                      Tween<double>(
+                        begin: 1,
+                        end: 0,
+                      ).chain(CurveTween(curve: Curves.easeIn)),
+                    ),
+                    child: child);
+              } else {
+                return ScaleTransition(
+                    scale: animation.drive(
+                      Tween<double>(
+                        begin: 2,
+                        end: 1,
+                      ).chain(CurveTween(curve: Curves.easeIn)),
+                    ),
+                    child: child);
+              }
+            },
           ),
-          ShellRoute(
-            routes: [
-              GoRoute(
-                path: Routes.aboutMe.addSlash,
-                name: Routes.aboutMe,
-                builder: (context, state) {
-                  return const AboutMeScreen();
-                },
-              ),
-              GoRoute(
-                path: Routes.myProjects.addSlash,
-                name: Routes.myProjects,
-                builder: (context, state) => const MyProjectsScreen(),
-              ),
-            ],
-            builder: (context, state, child) => Column(
+        ),
+        ShellRoute(
+          routes: [
+            GoRoute(
+              path: Routes.aboutMe.addSlash,
+              name: Routes.aboutMe,
+              // pageBuilder: (context, state) => NoTransitionPage<void>(
+              //   child: const AboutMeScreen(),
+              //   key: state.pageKey,
+              // ),
+              builder: (context, state) {
+                return const AboutMeScreen();
+              },
+            ),
+            GoRoute(
+              path: Routes.myProjects.addSlash,
+              name: Routes.myProjects,
+              builder: (context, state) {
+                return const MyProjectsScreen();
+              },
+            ),
+          ],
+          pageBuilder: (context, state, child) => NoTransitionPage(
+            child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                const TopNavigationBar(),
+                if (state.fullpath != Routes.home.addSlash)
+                  const TopNavigationBar(),
                 Expanded(
                   child: child,
                 ),
               ],
             ),
           ),
-        ],
-        builder: (context, state, child) {
-          return Scaffold(
-            body: Stack(
-              children: [
-                background,
-                child,
-              ],
+        ),
+      ],
+      builder: (context, state, child) {
+        return Scaffold(
+          body: HeroControllerScope(
+            controller: MaterialApp.createMaterialHeroController(),
+            child: LayoutBuilder(
+              builder: (context, constrains) {
+                return Stack(
+                  children: [
+                    background,
+                    child,
+                  ],
+                );
+              },
             ),
-          );
-        })
+          ),
+        );
+      },
+    )
   ],
 );
 
@@ -98,6 +139,8 @@ abstract class Routes {
   static String get myProjects => 'myprojects';
   static String get skills => 'skills';
   static String get experiences => 'experiences';
+  static String get achievements => 'achievements';
+  static String get contacts => 'contacts';
 }
 
 extension on String {

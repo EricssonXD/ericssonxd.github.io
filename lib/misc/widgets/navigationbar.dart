@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:mygithubwebpage/misc/provider/navbar.dart';
 import 'package:mygithubwebpage/misc/routes.dart';
 import 'package:mygithubwebpage/misc/theme.dart';
+import 'package:mygithubwebpage/misc/provider/navbar.dart';
 
 class TopNavigationBar extends StatefulHookConsumerWidget {
   const TopNavigationBar({super.key});
@@ -21,26 +21,14 @@ class _TopNavigationBarState extends ConsumerState<TopNavigationBar>
   @override
   void initState() {
     super.initState();
-    tabController = TabController(length: 3, vsync: this);
-    tabController.addListener(_onUpdate);
+    tabController = TabController(length: _tabs.length, vsync: this);
+    // tabController.addListener(_onUpdate);
     _controller.forward();
   }
 
-  void _onUpdate() {
-    ref.read(navigationBarIndexProvider.notifier).state = tabController.index;
-    switch (tabController.index) {
-      case 0:
-        context.goNamed(Routes.home);
-        break;
-      case 1:
-        context.goNamed(Routes.myProjects);
-        break;
-      case 2:
-        context.goNamed(Routes.aboutMe);
-        break;
-      default:
-        break;
-    }
+  void _onUpdate(int index) {
+    ref.read(navigationBarIndexProvider.notifier).state = index;
+    context.goNamed(_tabs.values.elementAt(index));
   }
 
   @override
@@ -67,7 +55,7 @@ class _TopNavigationBarState extends ConsumerState<TopNavigationBar>
       child: Padding(
         padding: EdgeInsets.only(top: 0.03.sh, bottom: 0.01.sh),
         child: SizedBox(
-          width: 1.w / 0.0000015.sw,
+          width: 1.w / 0.0000006.sw,
           child: TabBar(
             unselectedLabelColor: CustomTheme.white,
             labelColor: CustomTheme.gold_light,
@@ -75,22 +63,14 @@ class _TopNavigationBarState extends ConsumerState<TopNavigationBar>
             unselectedLabelStyle: const TextStyle(),
             controller: tabController,
             indicatorColor: CustomTheme.gold_light,
-            tabs: const <Widget>[
-              Tab(
-                child: Text(
-                  'Home',
-                ),
-              ),
-              Tab(
-                child: Text(
-                  'My Projects',
-                ),
-              ),
-              Tab(
-                child: Text(
-                  'About Me',
-                ),
-              ),
+            onTap: _onUpdate,
+            tabs: <Widget>[
+              for (var item in _tabs.keys)
+                Tab(
+                  child: Text(
+                    item,
+                  ),
+                )
             ],
           ),
         ),
@@ -98,3 +78,13 @@ class _TopNavigationBarState extends ConsumerState<TopNavigationBar>
     );
   }
 }
+
+Map _tabs = {
+  "Home": Routes.home,
+  "My Projects": Routes.myProjects,
+  "Experiences": Routes.experiences,
+  "Skills": Routes.skills,
+  "Achievements": Routes.achievements,
+  "About Me": Routes.aboutMe,
+  "Contacts": Routes.contacts,
+};

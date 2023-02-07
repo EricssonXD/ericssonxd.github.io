@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:mygithubwebpage/misc/provider/navbar.dart';
 import 'package:mygithubwebpage/misc/routes.dart';
 import 'package:mygithubwebpage/misc/theme.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -167,7 +166,6 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               alignment: Alignment(1000.w / (1.sw), -0.8.h),
               buttonText: "My Projects",
               buttonFunction: () {
-                ref.read(navigationBarIndexProvider.notifier).state = 1;
                 context.goNamed(Routes.myProjects);
               },
             ),
@@ -185,19 +183,17 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               alignment: Alignment(-1000.w / (1.sw), -0.8.h),
               buttonText: "About Me",
               buttonFunction: () {
-                ref.read(navigationBarIndexProvider.notifier).state = 2;
-
                 context.goNamed(Routes.aboutMe);
               },
             ),
             orbitButtons(
               alignment: Alignment(-1200.w / (1.sw), 0),
-              buttonText: "Placeholder",
+              buttonText: "Achievements",
               buttonFunction: () {},
             ),
             orbitButtons(
               alignment: Alignment(-1000.w / (1.sw), 0.8.h),
-              buttonText: "Placeholder 2",
+              buttonText: "Contact",
               buttonFunction: () {},
             )
           ],
