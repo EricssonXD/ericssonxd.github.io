@@ -30,7 +30,7 @@ class _SystemHash {
 }
 
 String _$NavigationBarIndexHash() =>
-    r'bf93d08de1053beda6a90b61c1a3dbfb5bb1807b';
+    r'66dbfb0fdf0c7907f03ea2ea22554485ec030912';
 
 /// See also [NavigationBarIndex].
 final navigationBarIndexProvider = NotifierProvider<NavigationBarIndex, int>(

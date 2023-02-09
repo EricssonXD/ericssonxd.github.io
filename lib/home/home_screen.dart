@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:mygithubwebpage/misc/routes.dart';
 import 'package:mygithubwebpage/misc/theme.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import '../misc/constants/constant_routes.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
@@ -140,13 +141,14 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
         width: 1.sw,
         child: Stack(
           children: [
+            background,
             // ElevatedButton(onPressed: () {}, child: const Text("FAQ")),
             // ElevatedButton(onPressed: () {}, child: const Text("LOL")),
             // ElevatedButton(onPressed: () {}, child: const Text("My projects")),
             Center(
               child: CircleAvatar(
                 radius: 300.sp,
-                foregroundImage: const AssetImage("assets/home/me.jpg"),
+                // foregroundImage: const AssetImage("assets/home/me.jpg"),
                 backgroundColor: Colors.black,
                 child: Container(
                   decoration: const BoxDecoration(
@@ -172,12 +174,16 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
             orbitButtons(
               alignment: Alignment(1200.w / (1.sw), 0),
               buttonText: "Skills",
-              buttonFunction: () {},
+              buttonFunction: () {
+                context.goNamed(Routes.skills);
+              },
             ),
             orbitButtons(
               alignment: Alignment(1000.w / (1.sw), 0.8.h),
               buttonText: "Experiences",
-              buttonFunction: () {},
+              buttonFunction: () {
+                context.goNamed(Routes.experiences);
+              },
             ),
             orbitButtons(
               alignment: Alignment(-1000.w / (1.sw), -0.8.h),
@@ -189,12 +195,16 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
             orbitButtons(
               alignment: Alignment(-1200.w / (1.sw), 0),
               buttonText: "Achievements",
-              buttonFunction: () {},
+              buttonFunction: () {
+                context.goNamed(Routes.achievements);
+              },
             ),
             orbitButtons(
               alignment: Alignment(-1000.w / (1.sw), 0.8.h),
               buttonText: "Contact",
-              buttonFunction: () {},
+              buttonFunction: () {
+                context.goNamed(Routes.contacts);
+              },
             )
           ],
         ),

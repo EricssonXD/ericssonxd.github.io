@@ -4,20 +4,21 @@ import 'package:mygithubwebpage/misc/constants/constant_routes.dart';
 import 'package:mygithubwebpage/misc/provider/navbar.dart';
 import 'package:mygithubwebpage/misc/theme.dart';
 
-class AboutMeScreen extends StatefulHookConsumerWidget {
-  const AboutMeScreen({super.key});
+class AchievementsScreen extends StatefulHookConsumerWidget {
+  const AchievementsScreen({super.key});
 
   @override
-  ConsumerState<ConsumerStatefulWidget> createState() => _AboutMeScreenState();
+  ConsumerState<ConsumerStatefulWidget> createState() =>
+      _AchievementsScreenState();
 }
 
-class _AboutMeScreenState extends ConsumerState<AboutMeScreen> {
+class _AchievementsScreenState extends ConsumerState<AchievementsScreen> {
   @override
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) => ref
         .read(navigationBarIndexProvider.notifier)
-        .setByRoute(Routes.aboutMe));
+        .setByRoute(Routes.achievements));
   }
 
   @override
@@ -35,7 +36,7 @@ class _AboutMeScreenState extends ConsumerState<AboutMeScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: const [
-            Text("About Me"),
+            Text("Achievemetns"),
           ],
         ),
       ),

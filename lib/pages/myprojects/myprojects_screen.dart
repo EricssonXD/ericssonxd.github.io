@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:mygithubwebpage/misc/constants/constant_routes.dart';
 import 'package:mygithubwebpage/misc/provider/navbar.dart';
 import 'package:mygithubwebpage/misc/theme.dart';
 
@@ -15,12 +16,10 @@ class MyProjectsScreen extends StatefulHookConsumerWidget {
 class _MyProjectsScreenState extends ConsumerState<MyProjectsScreen> {
   @override
   void initState() {
-    WidgetsBinding.instance.addPostFrameCallback((_) => postInit());
     super.initState();
-  }
-
-  void postInit() {
-    ref.read(navigationBarIndexProvider.notifier).state = 1;
+    WidgetsBinding.instance.addPostFrameCallback((_) => ref
+        .read(navigationBarIndexProvider.notifier)
+        .setByRoute(Routes.myProjects));
   }
 
   @override

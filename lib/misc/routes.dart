@@ -4,9 +4,17 @@ import 'package:mygithubwebpage/home/home_screen.dart';
 import 'package:mygithubwebpage/misc/theme.dart';
 import 'package:mygithubwebpage/misc/widgets/navigationbar.dart';
 import 'package:mygithubwebpage/pages/aboutme/aboutme_screen.dart';
+import 'package:mygithubwebpage/pages/achievements/achievements_screen.dart';
+import 'package:mygithubwebpage/pages/contacts/contacts_screen.dart';
+import 'package:mygithubwebpage/pages/experiences/experiences_screen.dart';
 import 'package:mygithubwebpage/pages/myprojects/myprojects_screen.dart';
+import 'package:mygithubwebpage/pages/skills/skills_screen.dart';
 
+import 'constants/constant_routes.dart';
+
+final GlobalKey<NavigatorState> $routerkey = GlobalKey<NavigatorState>();
 final GoRouter $rootRouter = GoRouter(
+  navigatorKey: $routerkey,
   initialLocation: Routes.home.addSlash,
   routes: [
     ShellRoute(
@@ -19,60 +27,68 @@ final GoRouter $rootRouter = GoRouter(
             child: const HomeScreen(),
             transitionsBuilder:
                 (context, animation, secondaryAnimation, child) {
-              if (state.fullpath != Routes.home.addSlash) {
-                return ScaleTransition(
-                    scale: animation.drive(
-                      Tween<double>(
-                        begin: 1,
-                        end: 0,
-                      ).chain(CurveTween(curve: Curves.easeIn)),
-                    ),
-                    child: child);
-              } else {
-                return ScaleTransition(
+              return FadeTransition(
+                opacity: animation,
+                child: ScaleTransition(
                     scale: animation.drive(
                       Tween<double>(
                         begin: 2,
                         end: 1,
                       ).chain(CurveTween(curve: Curves.easeIn)),
                     ),
-                    child: child);
-              }
+                    child: child),
+              );
             },
           ),
         ),
         ShellRoute(
           routes: [
-            GoRoute(
-              path: Routes.aboutMe.addSlash,
-              name: Routes.aboutMe,
-              // pageBuilder: (context, state) => NoTransitionPage<void>(
-              //   child: const AboutMeScreen(),
-              //   key: state.pageKey,
-              // ),
-              builder: (context, state) {
-                return const AboutMeScreen();
-              },
+            pageRoute(
+              route: Routes.aboutMe,
+              child: const AboutMeScreen(),
             ),
-            GoRoute(
-              path: Routes.myProjects.addSlash,
-              name: Routes.myProjects,
-              builder: (context, state) {
-                return const MyProjectsScreen();
-              },
+            pageRoute(
+              route: Routes.myProjects,
+              child: const MyProjectsScreen(),
+            ),
+            pageRoute(
+              route: Routes.experiences,
+              child: const ExperiencesScreen(),
+            ),
+            pageRoute(
+              route: Routes.achievements,
+              child: const AchievementsScreen(),
+            ),
+            pageRoute(
+              route: Routes.contacts,
+              child: const ContactsScreen(),
+            ),
+            pageRoute(
+              route: Routes.skills,
+              child: const SkillsScreen(),
             ),
           ],
-          pageBuilder: (context, state, child) => NoTransitionPage(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.end,
+          pageBuilder: (context, state, child) => CustomTransitionPage<void>(
+            child: Stack(
               children: [
-                if (state.fullpath != Routes.home.addSlash)
-                  const TopNavigationBar(),
-                Expanded(
-                  child: child,
+                background,
+                Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    const TopNavigationBar(),
+                    Expanded(
+                      child: child,
+                    ),
+                  ],
                 ),
               ],
+            ),
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) =>
+                    FadeTransition(
+              opacity: animation,
+              child: child,
             ),
           ),
         ),
@@ -97,6 +113,30 @@ final GoRouter $rootRouter = GoRouter(
     )
   ],
 );
+
+GoRoute pageRoute({
+  required String route,
+  required Widget child,
+}) {
+  return GoRoute(
+    path: route.addSlash,
+    name: route,
+    pageBuilder: (context, state) => CustomTransitionPage<void>(
+      transitionsBuilder: (context, animation, secondaryAnimation, child) =>
+          SlideTransition(
+        position: animation.drive(
+          Tween<Offset>(
+            begin: const Offset(-1, 0),
+            end: Offset.zero,
+          ),
+        ),
+        child: child,
+      ),
+      key: state.pageKey,
+      child: child,
+    ),
+  );
+}
 
 Widget background = Stack(
   children: [
@@ -131,16 +171,6 @@ class _BackgroundClip extends CustomClipper<Path> {
   bool shouldReclip(covariant CustomClipper<Path> oldClipper) {
     return false;
   }
-}
-
-abstract class Routes {
-  static String get aboutMe => 'aboutme';
-  static String get home => 'home';
-  static String get myProjects => 'myprojects';
-  static String get skills => 'skills';
-  static String get experiences => 'experiences';
-  static String get achievements => 'achievements';
-  static String get contacts => 'contacts';
 }
 
 extension on String {
