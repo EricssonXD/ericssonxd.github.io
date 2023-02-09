@@ -30,13 +30,19 @@ final GoRouter $rootRouter = GoRouter(
               return FadeTransition(
                 opacity: animation,
                 child: ScaleTransition(
-                    scale: animation.drive(
-                      Tween<double>(
-                        begin: 2,
-                        end: 1,
-                      ).chain(CurveTween(curve: Curves.easeIn)),
+                  scale: animation.drive(
+                    Tween<double>(
+                      begin: 2,
+                      end: 1,
+                    ).chain(CurveTween(curve: Curves.easeIn)),
+                  ),
+                  child: ScaleTransition(
+                    scale: secondaryAnimation.drive(
+                      Tween<double>(begin: 1, end: 2),
                     ),
-                    child: child),
+                    child: child,
+                  ),
+                ),
               );
             },
           ),
@@ -85,11 +91,20 @@ final GoRouter $rootRouter = GoRouter(
               ],
             ),
             transitionsBuilder:
-                (context, animation, secondaryAnimation, child) =>
-                    FadeTransition(
-              opacity: animation,
-              child: child,
-            ),
+                (context, animation, secondaryAnimation, child) {
+              return FadeTransition(
+                opacity: animation,
+                child: FadeTransition(
+                  opacity: secondaryAnimation.drive(
+                    Tween(
+                      begin: 1,
+                      end: 0,
+                    ),
+                  ),
+                  child: child,
+                ),
+              );
+            },
           ),
         ),
       ],
@@ -122,19 +137,21 @@ GoRoute pageRoute({
     path: route.addSlash,
     name: route,
     pageBuilder: (context, state) => CustomTransitionPage<void>(
-      transitionsBuilder: (context, animation, secondaryAnimation, child) =>
-          SlideTransition(
-        position: animation.drive(
-          Tween<Offset>(
-            begin: const Offset(-1, 0),
-            end: Offset.zero,
-          ),
-        ),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) =>
+            FadeTransition(
+              opacity: animation,
+              child: FadeTransition(
+                  opacity: secondaryAnimation.drive(
+                    Tween<double>(
+                      begin: 1,
+                      end: 0.2,
+                    ),
+                  ),
+                  child: child),
+            ),
+        key: state.pageKey,
         child: child,
-      ),
-      key: state.pageKey,
-      child: child,
-    ),
+        transitionDuration: const Duration(milliseconds: 150)),
   );
 }
 
