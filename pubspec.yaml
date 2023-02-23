@@ -22,6 +22,8 @@ dependencies:
   google_fonts: ^4.0.1
   getwidget: ^3.0.1
   animations: ^2.0.7
+  responsive_builder: ^0.5.1
+  flutter_markdown: ^0.6.14
 
 dev_dependencies:
   flutter_test:

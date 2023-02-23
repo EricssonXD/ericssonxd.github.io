@@ -5,6 +5,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:mygithubwebpage/misc/constants/constant_routes.dart';
 import 'package:mygithubwebpage/misc/provider/navbar.dart';
 import 'package:mygithubwebpage/misc/theme.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 
 class TopNavigationBar extends StatefulHookConsumerWidget {
   const TopNavigationBar({super.key});
@@ -55,36 +56,38 @@ class _TopNavigationBarState extends ConsumerState<TopNavigationBar>
   @override
   Widget build(BuildContext context) {
     tabController.index = ref.watch(navigationBarIndexProvider);
-    return SlideTransition(
-      position: _offsetAnimation,
-      child: Padding(
-        padding: EdgeInsets.only(top: 0.03.sh, bottom: 0.01.sh),
-        child: SizedBox(
-          width: 1.w / 0.0000006.sw,
-          child: TabBar(
-            unselectedLabelColor: CustomTheme.white,
-            labelColor: CustomTheme.gold_light,
-            labelStyle: const TextStyle(fontWeight: FontWeight.bold),
-            unselectedLabelStyle: const TextStyle(),
-            controller: tabController,
-            indicatorColor: CustomTheme.gold_light,
-            onTap: _onUpdate,
-            tabs: <Widget>[
-              for (var item in navbarTabs.keys)
-                Tab(
-                  child: Text(
-                    item,
-                  ),
-                )
-            ],
+    return ResponsiveBuilder(builder: (context, sizingInformation) {
+      return SlideTransition(
+        position: _offsetAnimation,
+        child: Padding(
+          padding: EdgeInsets.only(top: 0.03.sh, bottom: 0.01.sh),
+          child: SizedBox(
+            width: 1.w / 0.0000006.sw,
+            child: TabBar(
+              unselectedLabelColor: CustomTheme.white,
+              labelColor: CustomTheme.gold_light,
+              labelStyle: const TextStyle(fontWeight: FontWeight.bold),
+              unselectedLabelStyle: const TextStyle(),
+              controller: tabController,
+              indicatorColor: CustomTheme.gold_light,
+              onTap: _onUpdate,
+              tabs: <Widget>[
+                for (var item in navbarTabs.keys)
+                  Tab(
+                    child: Text(
+                      item,
+                    ),
+                  )
+              ],
+            ),
           ),
         ),
-      ),
-    );
+      );
+    });
   }
 }
 
-final Map navbarTabs = {
+const Map navbarTabs = {
   "Home": Routes.home,
   "My Projects": Routes.myProjects,
   "Experiences": Routes.experiences,
