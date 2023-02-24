@@ -78,9 +78,8 @@ class WelcomePageDesk extends StatelessWidget {
               Expanded(
                 child: GestureDetector(
                   onTap: () {
-                    js.context.callMethod("open", [
-                      "https://drive.google.com/file/d/1PZYWMJEQMLIh5g5mXnENQcOL1vlunq6_/view?usp=sharing"
-                    ]);
+                    js.context
+                        .callMethod("open", ["https://ericssonxd.github.io"]);
                   },
                   child: Container(
                     padding: const EdgeInsets.symmetric(
@@ -112,37 +111,37 @@ List<Widget> _contactList({bool isMobile = false}) => [
       _contactIcons(
         iconData: FontAwesomeIcons.facebook,
         color: Colors.blue,
-        link: "https://www.facebook.com/naveenjujaray",
+        link: "https://www.facebook.com/e",
         mobile: isMobile,
       ),
       _contactIcons(
         iconData: FontAwesomeIcons.twitter,
         color: Colors.lightBlue,
-        link: "https://twitter.com/naveenjujaray",
+        link: "https://twitter.com/e",
         mobile: isMobile,
       ),
       _contactIcons(
         iconData: FontAwesomeIcons.linkedin,
         color: const Color.fromRGBO(40, 103, 178, 1),
-        link: "https://www.linkedin.com/in/naveenjujaray",
+        link: "https://www.linkedin.com/in/e",
         mobile: isMobile,
       ),
       _contactIcons(
         iconData: FontAwesomeIcons.bloggerB,
         color: Colors.red,
-        link: "https://naveenjujaray.js.org",
+        link: "https://e.js.org",
         mobile: isMobile,
       ),
       _contactIcons(
         iconData: FontAwesomeIcons.github,
         color: Colors.black,
-        link: "https://www.github.com/naveenjujaray",
+        link: "https://www.github.com/e",
         mobile: isMobile,
       ),
       _contactIcons(
         iconData: FontAwesomeIcons.gitlab,
         color: Colors.orange,
-        link: "https://www.gitlab.com/naveenjujaray",
+        link: "https://www.gitlab.com/e",
         mobile: isMobile,
       ),
     ];
@@ -241,9 +240,7 @@ class WelcomePageTab extends StatelessWidget {
                 ),
                 GestureDetector(
                   onTap: () {
-                    js.context.callMethod("open", [
-                      "https://drive.google.com/file/d/1PZYWMJEQMLIh5g5mXnENQcOL1vlunq6_/view?usp=sharing"
-                    ]);
+                    js.context.callMethod("open", ["https://e"]);
                   },
                   child: Container(
                     padding: const EdgeInsets.symmetric(
@@ -355,9 +352,7 @@ class WelcomePageMob extends StatelessWidget {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      js.context.callMethod("open", [
-                        "https://drive.google.com/file/d/1PZYWMJEQMLIh5g5mXnENQcOL1vlunq6_/view?usp=sharing"
-                      ]);
+                      js.context.callMethod("open", ["https://e"]);
                     },
                     child: Container(
                       padding: const EdgeInsets.symmetric(

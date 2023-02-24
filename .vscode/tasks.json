@@ -5,6 +5,18 @@
 			"type": "flutter",
 			"command": "flutter",
 			"args": [
+				"build",
+				"web"
+			],
+			"group": "build",
+			"problemMatcher": [],
+			"label": "flutter: flutter build web",
+			"detail": ""
+		},
+		{
+			"type": "flutter",
+			"command": "flutter",
+			"args": [
 				"pub",
 				"run",
 				"build_runner",
@@ -17,8 +29,8 @@
 			"label": "flutter: flutter pub run build_runner watch",
 			"detail": "",
 			"runOptions": {
-				"runOn": "folderOpen",
-			},
-		}
+				"runOn": "folderOpen"
+			}
+		},
 	]
 }

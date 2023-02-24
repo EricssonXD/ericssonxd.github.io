@@ -24,6 +24,14 @@ dependencies:
   animations: ^2.0.7
   responsive_builder: ^0.5.1
   flutter_markdown: ^0.6.14
+  adaptive_theme: ^3.2.0
+  font_awesome_flutter: ^10.4.0
+  flutter_rounded_progress_bar: ^0.2.0
+  url_launcher: ^6.1.10
+  characters: ^1.2.1
+  get_it: ^7.2.0
+  dyn_mouse_scroll: ^1.0.7
+
 
 dev_dependencies:
   flutter_test:

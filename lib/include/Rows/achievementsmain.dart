@@ -182,7 +182,7 @@ class _AchievementItemBuilder {
           size: iconSize,
           color: Colors.redAccent,
         ),
-        inkWell: inkWellBuilder("https://naveenjujaray.js.org"),
+        inkWell: inkWellBuilder("https://ericssonxd.github.io"),
         text: itemTitle("Blog"),
       ),
       _AchievementItem(
@@ -191,7 +191,7 @@ class _AchievementItemBuilder {
           size: iconSize,
           color: Colors.redAccent,
         ),
-        inkWell: inkWellBuilder("https://naveenjujaray.js.org"),
+        inkWell: inkWellBuilder("https://ericssonxd.github.io"),
         text: itemTitle("Blog"),
       ),
       _AchievementItem(
@@ -200,7 +200,7 @@ class _AchievementItemBuilder {
           size: iconSize,
           color: Colors.redAccent,
         ),
-        inkWell: inkWellBuilder("https://naveenjujaray.js.org"),
+        inkWell: inkWellBuilder("https://ericssonxd.github.io"),
         text: itemTitle("Blog"),
       ),
     ];

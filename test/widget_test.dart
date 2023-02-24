@@ -1,30 +1,38 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
 import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';
-
-import 'package:mygithubwebpage/main.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  final stopwatch = Stopwatch()..start();
+  List list = [];
+  for (int i = 0; i < 100000; i++) {
+    list.add(mapTest(i));
+  }
+  debugPrint(list.length.toString());
+  debugPrint('This code took ${stopwatch.elapsed}');
+}
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+mapTest(int index) {
+  return {
+    "child": Container(),
+    "id": index,
+    "name": "My Name is ${index.toString()}",
+  };
+}
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+classTest(int index) {
+  return _TestClass(
+    child: Container(),
+    id: index,
+    name: "My Name is ${index.toString()}",
+  );
+}
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+class _TestClass {
+  final String name;
+  final int id;
+  final Widget child;
+  _TestClass({
+    required this.name,
+    required this.child,
+    required this.id,
   });
 }

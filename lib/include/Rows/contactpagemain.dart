@@ -87,7 +87,7 @@ class ContactPageDesk extends StatelessWidget {
                       ),
                       onPressed: () {
                         js.context.callMethod(
-                            "open", ["https://www.facebook.com/naveenjujaray"]);
+                            "open", ["https://ericssonxd.github.io"]);
                       },
                     )),
               ),
@@ -102,8 +102,8 @@ class ContactPageDesk extends StatelessWidget {
                       size: 40,
                     ),
                     onTap: () {
-                      js.context.callMethod(
-                          "open", ["https://twitter.com/naveenjujaray"]);
+                      js.context
+                          .callMethod("open", ["https://ericssonxd.github.io"]);
                     },
                   ),
                 ),
@@ -119,8 +119,8 @@ class ContactPageDesk extends StatelessWidget {
                         size: 40,
                       ),
                       onPressed: () {
-                        js.context.callMethod("open",
-                            ["https://www.linkedin.com/in/naveenjujaray"]);
+                        js.context.callMethod(
+                            "open", ["https://ericssonxd.github.io"]);
                       },
                     )),
               ),
@@ -136,7 +136,7 @@ class ContactPageDesk extends StatelessWidget {
                       ),
                       onPressed: () {
                         js.context.callMethod(
-                            "open", ["https://naveenjujaray.js.org"]);
+                            "open", ["https://ericssonxd.github.io"]);
                       },
                     )),
               ),
@@ -151,7 +151,7 @@ class ContactPageDesk extends StatelessWidget {
                       ),
                       onPressed: () {
                         js.context.callMethod(
-                            "open", ["https://www.github.com/naveenjujaray"]);
+                            "open", ["https://ericssonxd.github.io"]);
                       },
                     )),
               ),
@@ -167,7 +167,7 @@ class ContactPageDesk extends StatelessWidget {
                       ),
                       onPressed: () {
                         js.context.callMethod(
-                            "open", ["https://www.gitlab.com/naveenjujaray"]);
+                            "open", ["https://ericssonxd.github.io"]);
                       },
                     )),
               ),
@@ -182,7 +182,7 @@ class ContactPageDesk extends StatelessWidget {
                       ),
                       onPressed: () {
                         js.context.callMethod(
-                            "open", ["https://medium.com/@naveenjujaray"]);
+                            "open", ["https://ericssonxd.github.io"]);
                       },
                     )),
               ),
@@ -197,7 +197,7 @@ class ContactPageDesk extends StatelessWidget {
                       ),
                       onPressed: () {
                         js.context.callMethod(
-                            "open", ["https://dev.to/naveenjujaray"]);
+                            "open", ["https://ericssonxd.github.io"]);
                       },
                     )),
               ),
@@ -212,8 +212,8 @@ class ContactPageDesk extends StatelessWidget {
                         size: 40,
                       ),
                       onPressed: () {
-                        js.context.callMethod("open",
-                            ["https://www.reddit.com/user/jujaraynaveen"]);
+                        js.context.callMethod(
+                            "open", ["https://www.reddit.com/user/ericsson"]);
                       },
                     )),
               ),
@@ -306,8 +306,8 @@ class ContactPageTab extends StatelessWidget {
                           size: 40,
                         ),
                         onPressed: () {
-                          js.context.callMethod("open",
-                              ["https://www.facebook.com/naveenjujaray"]);
+                          js.context.callMethod(
+                              "open", ["https://ericssonxd.github.io"]);
                         },
                       )),
                 ),
@@ -323,7 +323,7 @@ class ContactPageTab extends StatelessWidget {
                         ),
                         onPressed: () {
                           js.context.callMethod(
-                              "open", ["https://twitter.com/naveenjujaray"]);
+                              "open", ["https://ericssonxd.github.io"]);
                         },
                       )),
                 ),
@@ -338,8 +338,8 @@ class ContactPageTab extends StatelessWidget {
                           size: 40,
                         ),
                         onPressed: () {
-                          js.context.callMethod("open",
-                              ["https://www.linkedin.com/in/naveenjujaray"]);
+                          js.context.callMethod(
+                              "open", ["https://ericssonxd.github.io"]);
                         },
                       )),
                 ),
@@ -355,7 +355,7 @@ class ContactPageTab extends StatelessWidget {
                         ),
                         onPressed: () {
                           js.context.callMethod(
-                              "open", ["https://naveenjujaray.js.org"]);
+                              "open", ["https://ericssonxd.github.io"]);
                         },
                       )),
                 ),
@@ -370,7 +370,7 @@ class ContactPageTab extends StatelessWidget {
                         ),
                         onPressed: () {
                           js.context.callMethod(
-                              "open", ["https://www.github.com/naveenjujaray"]);
+                              "open", ["https://ericssonxd.github.io"]);
                         },
                       )),
                 ),
@@ -386,7 +386,7 @@ class ContactPageTab extends StatelessWidget {
                         ),
                         onPressed: () {
                           js.context.callMethod(
-                              "open", ["https://www.gitlab.com/naveenjujaray"]);
+                              "open", ["https://ericssonxd.github.io"]);
                         },
                       )),
                 ),
@@ -401,7 +401,7 @@ class ContactPageTab extends StatelessWidget {
                         ),
                         onPressed: () {
                           js.context.callMethod(
-                              "open", ["https://medium.com/@naveenjujaray"]);
+                              "open", ["https://ericssonxd.github.io"]);
                         },
                       )),
                 ),
@@ -416,7 +416,7 @@ class ContactPageTab extends StatelessWidget {
                         ),
                         onPressed: () {
                           js.context.callMethod(
-                              "open", ["https://dev.to/naveenjujaray"]);
+                              "open", ["https://ericssonxd.github.io"]);
                         },
                       )),
                 ),
@@ -431,8 +431,8 @@ class ContactPageTab extends StatelessWidget {
                           size: 40,
                         ),
                         onPressed: () {
-                          js.context.callMethod("open",
-                              ["https://www.reddit.com/user/jujaraynaveen"]);
+                          js.context.callMethod(
+                              "open", ["https://www.reddit.com/user/ericsson"]);
                         },
                       )),
                 ),
@@ -530,7 +530,7 @@ class ContactPageMob extends StatelessWidget {
                       ),
                       onPressed: () {
                         js.context.callMethod(
-                            "open", ["https://www.facebook.com/naveenjujaray"]);
+                            "open", ["https://ericssonxd.github.io"]);
                       },
                     )),
                 SizedBox(
@@ -544,7 +544,7 @@ class ContactPageMob extends StatelessWidget {
                       ),
                       onPressed: () {
                         js.context.callMethod(
-                            "open", ["https://twitter.com/naveenjujaray"]);
+                            "open", ["https://ericssonxd.github.io"]);
                       },
                     )),
                 SizedBox(
@@ -557,8 +557,8 @@ class ContactPageMob extends StatelessWidget {
                         size: 40,
                       ),
                       onPressed: () {
-                        js.context.callMethod("open",
-                            ["https://www.linkedin.com/in/naveenjujaray"]);
+                        js.context.callMethod(
+                            "open", ["https://ericssonxd.github.io"]);
                       },
                     )),
                 SizedBox(
@@ -572,7 +572,7 @@ class ContactPageMob extends StatelessWidget {
                       ),
                       onPressed: () {
                         js.context.callMethod(
-                            "open", ["https://naveenjujaray.js.org"]);
+                            "open", ["https://ericssonxd.github.io"]);
                       },
                     )),
                 SizedBox(
@@ -585,7 +585,7 @@ class ContactPageMob extends StatelessWidget {
                       ),
                       onPressed: () {
                         js.context.callMethod(
-                            "open", ["https://www.github.com/naveenjujaray"]);
+                            "open", ["https://ericssonxd.github.io"]);
                       },
                     )),
               ],
@@ -604,7 +604,7 @@ class ContactPageMob extends StatelessWidget {
                       ),
                       onPressed: () {
                         js.context.callMethod(
-                            "open", ["https://www.gitlab.com/naveenjujaray"]);
+                            "open", ["https://ericssonxd.github.io"]);
                       },
                     )),
                 SizedBox(
@@ -617,7 +617,7 @@ class ContactPageMob extends StatelessWidget {
                       ),
                       onPressed: () {
                         js.context.callMethod(
-                            "open", ["https://medium.com/@naveenjujaray"]);
+                            "open", ["https://ericssonxd.github.io"]);
                       },
                     )),
                 SizedBox(
@@ -630,7 +630,7 @@ class ContactPageMob extends StatelessWidget {
                       ),
                       onPressed: () {
                         js.context.callMethod(
-                            "open", ["https://dev.to/naveenjujaray"]);
+                            "open", ["https://ericssonxd.github.io"]);
                       },
                     )),
                 SizedBox(
@@ -643,8 +643,8 @@ class ContactPageMob extends StatelessWidget {
                         size: 40,
                       ),
                       onPressed: () {
-                        js.context.callMethod("open",
-                            ["https://www.reddit.com/user/jujaraynaveen"]);
+                        js.context.callMethod(
+                            "open", ["https://www.reddit.com/user/ericsson"]);
                       },
                     )),
               ],
