@@ -177,31 +177,39 @@ class _AchievementItemBuilder {
   }) {
     items = [
       _AchievementItem(
-        icon: Icon(
-          FontAwesomeIcons.bloggerB,
-          size: iconSize,
-          color: Colors.redAccent,
+        icon: Padding(
+          padding: EdgeInsets.only(right: iconSize / 3.2),
+          child: Icon(
+            FontAwesomeIcons.dumbbell,
+            size: iconSize,
+            color: Colors.black,
+          ),
         ),
-        inkWell: inkWellBuilder("https://ericssonxd.github.io"),
-        text: itemTitle("Blog"),
+        inkWell:
+            inkWellBuilder("https://github.com/EricssonXD/Workout-Planner"),
+        text: itemTitle("Workout Planner App"),
+      ),
+      _AchievementItem(
+        icon: Padding(
+          padding: EdgeInsets.only(right: iconSize / 5),
+          child: Icon(
+            FontAwesomeIcons.youtube,
+            size: iconSize,
+            color: Colors.redAccent,
+          ),
+        ),
+        inkWell: inkWellBuilder(
+            "https://github.com/EricssonXD/CRCKC-Livestream-Helper"),
+        text: itemTitle("Livestream Helper"),
       ),
       _AchievementItem(
         icon: Icon(
-          FontAwesomeIcons.bloggerB,
+          FontAwesomeIcons.whatsapp,
           size: iconSize,
-          color: Colors.redAccent,
+          color: Colors.green,
         ),
-        inkWell: inkWellBuilder("https://ericssonxd.github.io"),
-        text: itemTitle("Blog"),
-      ),
-      _AchievementItem(
-        icon: Icon(
-          FontAwesomeIcons.bloggerB,
-          size: iconSize,
-          color: Colors.redAccent,
-        ),
-        inkWell: inkWellBuilder("https://ericssonxd.github.io"),
-        text: itemTitle("Blog"),
+        // inkWell: inkWellBuilder("https://ericssonxd.github.io"),
+        text: itemTitle("Custom Whatsapp API"),
       ),
     ];
   }
@@ -265,7 +273,7 @@ class _AchievementItemBuilder {
             height: 5,
           ),
           item.text,
-          item.inkWell,
+          if (item.inkWell != null) item.inkWell!,
         ],
       ),
     );
@@ -274,11 +282,12 @@ class _AchievementItemBuilder {
 
 class _AchievementItem {
   final Widget icon;
-  final Widget inkWell;
+  final Widget? inkWell;
   final Widget text;
   _AchievementItem({
     required this.icon,
-    required this.inkWell,
+    // ignore: unused_element
+    this.inkWell,
     required this.text,
   });
 }

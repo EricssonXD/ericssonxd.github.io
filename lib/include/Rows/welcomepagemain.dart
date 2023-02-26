@@ -61,12 +61,14 @@ class WelcomePageDesk extends StatelessWidget {
                       color: Colors.blueAccent,
                       borderRadius: BorderRadius.circular(5),
                     ),
-                    child: const Text(
-                      'CONTACT ME',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w800,
-                        color: Colors.white,
+                    child: const Center(
+                      child: Text(
+                        'CONTACT ME',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w800,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
                   ),
@@ -75,30 +77,29 @@ class WelcomePageDesk extends StatelessWidget {
               const SizedBox(
                 width: 50,
               ),
-              Expanded(
-                child: GestureDetector(
-                  onTap: () {
-                    js.context
-                        .callMethod("open", ["https://ericssonxd.github.io"]);
-                  },
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 40, vertical: 15),
-                    decoration: BoxDecoration(
-                      color: Colors.blueAccent,
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                    child: const Text(
-                      'SEE MY RESUME',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w800,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
+              //   Expanded(
+              //     child: GestureDetector(
+              //       onTap: () {
+              //         js.context.callMethod("open", ["link-to-resmue"]);
+              //       },
+              //       child: Container(
+              //         padding: const EdgeInsets.symmetric(
+              //             horizontal: 40, vertical: 15),
+              //         decoration: BoxDecoration(
+              //           color: Colors.blueAccent,
+              //           borderRadius: BorderRadius.circular(5),
+              //         ),
+              //         child: const Text(
+              //           'SEE MY RESUME',
+              //           style: TextStyle(
+              //             fontSize: 18,
+              //             fontWeight: FontWeight.w800,
+              //             color: Colors.white,
+              //           ),
+              //         ),
+              //       ),
+              //     ),
+              //   ),
             ],
           ),
         ],
@@ -109,39 +110,15 @@ class WelcomePageDesk extends StatelessWidget {
 
 List<Widget> _contactList({bool isMobile = false}) => [
       _contactIcons(
-        iconData: FontAwesomeIcons.facebook,
-        color: Colors.blue,
-        link: "https://www.facebook.com/e",
-        mobile: isMobile,
-      ),
-      _contactIcons(
-        iconData: FontAwesomeIcons.twitter,
-        color: Colors.lightBlue,
-        link: "https://twitter.com/e",
-        mobile: isMobile,
-      ),
-      _contactIcons(
         iconData: FontAwesomeIcons.linkedin,
         color: const Color.fromRGBO(40, 103, 178, 1),
-        link: "https://www.linkedin.com/in/e",
-        mobile: isMobile,
-      ),
-      _contactIcons(
-        iconData: FontAwesomeIcons.bloggerB,
-        color: Colors.red,
-        link: "https://e.js.org",
+        link: "https://www.linkedin.com/in/ericssonc",
         mobile: isMobile,
       ),
       _contactIcons(
         iconData: FontAwesomeIcons.github,
         color: Colors.black,
-        link: "https://www.github.com/e",
-        mobile: isMobile,
-      ),
-      _contactIcons(
-        iconData: FontAwesomeIcons.gitlab,
-        color: Colors.orange,
-        link: "https://www.gitlab.com/e",
+        link: "https://www.github.com/ericssonxd",
         mobile: isMobile,
       ),
     ];
@@ -225,12 +202,14 @@ class WelcomePageTab extends StatelessWidget {
                       color: Colors.blueAccent,
                       borderRadius: BorderRadius.circular(5),
                     ),
-                    child: const Text(
-                      'CONTACT ME',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w800,
-                        color: Colors.white,
+                    child: const Center(
+                      child: Text(
+                        'CONTACT ME',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w800,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
                   ),
@@ -238,27 +217,27 @@ class WelcomePageTab extends StatelessWidget {
                 const SizedBox(
                   width: 20,
                 ),
-                GestureDetector(
-                  onTap: () {
-                    js.context.callMethod("open", ["https://e"]);
-                  },
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 30, vertical: 10),
-                    decoration: BoxDecoration(
-                      color: Colors.blueAccent,
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                    child: const Text(
-                      'SEE MY RESUME',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w800,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ),
+                // GestureDetector(
+                //   onTap: () {
+                //     js.context.callMethod("open", ["link-to-resmue"]);
+                //   },
+                //   child: Container(
+                //     padding: const EdgeInsets.symmetric(
+                //         horizontal: 30, vertical: 10),
+                //     decoration: BoxDecoration(
+                //       color: Colors.blueAccent,
+                //       borderRadius: BorderRadius.circular(5),
+                //     ),
+                //     child: const Text(
+                //       'SEE MY RESUME',
+                //       style: TextStyle(
+                //         fontSize: 18,
+                //         fontWeight: FontWeight.w800,
+                //         color: Colors.white,
+                //       ),
+                //     ),
+                //   ),
+                // ),
               ],
             ),
           ],
@@ -330,12 +309,14 @@ class WelcomePageMob extends StatelessWidget {
                         color: Colors.blueAccent,
                         borderRadius: BorderRadius.circular(5),
                       ),
-                      child: const Text(
-                        'CONTACT ME',
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w800,
-                          color: Colors.white,
+                      child: const Center(
+                        child: Text(
+                          'CONTACT ME',
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w800,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ),
@@ -346,34 +327,34 @@ class WelcomePageMob extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            Center(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  GestureDetector(
-                    onTap: () {
-                      js.context.callMethod("open", ["https://e"]);
-                    },
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 15, vertical: 10),
-                      decoration: BoxDecoration(
-                        color: Colors.blueAccent,
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      child: const Text(
-                        'SEE MY RESUME',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w900,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            // Center(
+            //   child: Row(
+            //     mainAxisAlignment: MainAxisAlignment.center,
+            //     children: [
+            //       GestureDetector(
+            //         onTap: () {
+            //           js.context.callMethod("open", ["link-to-resmue"]);
+            //         },
+            //         child: Container(
+            //           padding: const EdgeInsets.symmetric(
+            //               horizontal: 15, vertical: 10),
+            //           decoration: BoxDecoration(
+            //             color: Colors.blueAccent,
+            //             borderRadius: BorderRadius.circular(5),
+            //           ),
+            //           child: const Text(
+            //             'SEE MY RESUME',
+            //             style: TextStyle(
+            //               fontSize: 16,
+            //               fontWeight: FontWeight.w900,
+            //               color: Colors.white,
+            //             ),
+            //           ),
+            //         ),
+            //       ),
+            //     ],
+            //   ),
+            // ),
           ],
         ),
       ),

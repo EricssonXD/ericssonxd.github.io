@@ -1,4 +1,3 @@
-import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mygithubwebpage/pages/layoutpage.dart';
 import 'package:flutter/material.dart';
@@ -10,8 +9,8 @@ void main() async {
   final savedThemeMode =
       await AdaptiveTheme.getThemeMode() ?? AdaptiveThemeMode.light;
   setupLocator();
-  SystemChrome.setPreferredOrientations(
-      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+  // SystemChrome.setPreferredOrientations(
+  //     [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   runApp(MyApp(savedThemeMode: savedThemeMode));
 }
 

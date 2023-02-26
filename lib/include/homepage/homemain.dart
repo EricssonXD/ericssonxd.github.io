@@ -48,8 +48,8 @@ class _HomeDesktopState extends State<HomeDesktop> {
           },
         ),
         child: DynMouseScroll(
-          mobilePhysics: const BouncingScrollPhysics(),
-          durationMS: 200,
+          mobilePhysics: const AlwaysScrollableScrollPhysics(),
+          durationMS: 300,
           builder: (context, controller, physics) => SingleChildScrollView(
             physics: physics,
             controller: controller,
@@ -145,34 +145,44 @@ class HomeMobile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    debugPrint("Tablet");
-    return SingleChildScrollView(
-      physics: const AlwaysScrollableScrollPhysics(),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Flexible(
-            child: ListView(
-              shrinkWrap: true,
-              physics: const BouncingScrollPhysics(),
-              children: const <Widget>[
-                WelcomePageMob(),
-                OneMob(),
-                SkillsMob(),
-                ProgressPage(),
-                EducationMob(),
-                AchievementMob(),
-                // BlogCenterMob(),
-                ContactCenterMob(),
-                SizedBox(
-                  height: 50,
-                ),
-                FooterPage()
-              ],
+    debugPrint("Mobile");
+    return ScrollConfiguration(
+      behavior: ScrollConfiguration.of(context).copyWith(
+        dragDevices: {
+          PointerDeviceKind.mouse,
+          PointerDeviceKind.touch,
+          PointerDeviceKind.stylus,
+          PointerDeviceKind.unknown,
+        },
+      ),
+      child: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Flexible(
+              child: ListView(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                children: const <Widget>[
+                  WelcomePageMob(),
+                  OneMob(),
+                  SkillsMob(),
+                  ProgressPage(),
+                  EducationMob(),
+                  AchievementMob(),
+                  // BlogCenterMob(),
+                  ContactCenterMob(),
+                  SizedBox(
+                    height: 50,
+                  ),
+                  FooterPage()
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -183,34 +193,44 @@ class HomeTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    debugPrint("mobile");
-    return SingleChildScrollView(
-      physics: const AlwaysScrollableScrollPhysics(),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Flexible(
-            child: ListView(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              children: const <Widget>[
-                WelcomePageTab(),
-                OneTab(),
-                SkillsTab(),
-                ProgressPage(),
-                EducationTab(),
-                AchievementTab(),
-                // BlogCenterTab(),
-                ContactCenterTab(),
-                SizedBox(
-                  height: 50,
-                ),
-                FooterMob(),
-              ],
+    debugPrint("Tablet");
+    return ScrollConfiguration(
+      behavior: ScrollConfiguration.of(context).copyWith(
+        dragDevices: {
+          PointerDeviceKind.mouse,
+          PointerDeviceKind.touch,
+          PointerDeviceKind.stylus,
+          PointerDeviceKind.unknown,
+        },
+      ),
+      child: SingleChildScrollView(
+        physics: const AlwaysScrollableScrollPhysics(),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Flexible(
+              child: ListView(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                children: const <Widget>[
+                  WelcomePageTab(),
+                  OneTab(),
+                  SkillsTab(),
+                  ProgressPage(),
+                  EducationTab(),
+                  AchievementTab(),
+                  // BlogCenterTab(),
+                  ContactCenterTab(),
+                  SizedBox(
+                    height: 50,
+                  ),
+                  FooterMob(),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

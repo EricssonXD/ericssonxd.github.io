@@ -1,5 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:mygithubwebpage/misc/icomoon_icons.dart';
+
+const String titleText = "What i do";
+const String subtitleText =
+    "DEVELOPER WHO WORKS HARD TO CREATE THE PERFECT PROGRAM SO I NEVER HAVE TO WORK AGAIN";
+const String description1 = "⚡ Create Solutions to Problems by Coding";
+const String description2 = "";
+// "⚡ Progressive Web Applications ( PWA ) in normal and SPA Stacks";
+const String description3 = "";
+// "⚡ Integration of third party services such as Firebase/ AWS / Digital Ocean";
+const List<IconData> iconList = [
+  CustomIcons.flutter,
+  FontAwesomeIcons.python,
+  FontAwesomeIcons.github,
+  FontAwesomeIcons.linux,
+  FontAwesomeIcons.docker,
+  CustomIcons.cplusplus,
+];
 
 class SkillsLogoDesk extends StatelessWidget {
   const SkillsLogoDesk({super.key});
@@ -12,7 +30,7 @@ class SkillsLogoDesk extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           const Text(
-            "What i do",
+            titleText,
             style: TextStyle(
                 fontWeight: FontWeight.w800, height: 1.0, fontSize: 50),
             textAlign: TextAlign.center,
@@ -21,7 +39,7 @@ class SkillsLogoDesk extends StatelessWidget {
             height: 30,
           ),
           const Text(
-            "CRAZY FULL STACK DEVELOPER WHO WANTS TO EXPLORE EVERY TECH STACK",
+            subtitleText,
             style: TextStyle(
               fontSize: 22,
             ),
@@ -30,127 +48,62 @@ class SkillsLogoDesk extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              SizedBox(
+          Wrap(
+            alignment: WrapAlignment.center,
+            runAlignment: WrapAlignment.end,
+            crossAxisAlignment: WrapCrossAlignment.end,
+            spacing: 5,
+            children: [
+              for (IconData data in iconList) ...[
+                _SkillsIcon(
                   width: 80,
                   height: 80,
-                  child: Icon(
-                    FontAwesomeIcons.html5,
-                    size: 60,
-                    color: Colors.grey,
-                  )),
-              SizedBox(
-                width: 5,
-              ),
-              SizedBox(
-                  width: 80,
-                  height: 80,
-                  child: Icon(
-                    FontAwesomeIcons.css3,
-                    size: 60,
-                    color: Colors.grey,
-                  )),
-              SizedBox(
-                width: 5,
-              ),
-              SizedBox(
-                  width: 80,
-                  height: 80,
-                  child: Icon(
-                    FontAwesomeIcons.android,
-                    size: 60,
-                    color: Colors.grey,
-                  )),
-              SizedBox(
-                width: 5,
-              ),
-              SizedBox(
-                  width: 80,
-                  height: 80,
-                  child: Icon(
-                    FontAwesomeIcons.python,
-                    size: 60,
-                    color: Colors.grey,
-                  )),
-              SizedBox(
-                width: 5,
-              ),
-              SizedBox(
-                  width: 80,
-                  height: 80,
-                  child: Icon(
-                    FontAwesomeIcons.node,
-                    size: 60,
-                    color: Colors.grey,
-                  )),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              SizedBox(
-                  width: 80,
-                  height: 80,
-                  child: Icon(
-                    FontAwesomeIcons.fire,
-                    size: 60,
-                    color: Colors.grey,
-                  )),
-              SizedBox(
-                width: 5,
-              ),
-              SizedBox(
-                  width: 80,
-                  height: 80,
-                  child: Icon(
-                    FontAwesomeIcons.react,
-                    size: 60,
-                    color: Colors.grey,
-                  )),
-              SizedBox(
-                width: 5,
-              ),
-              SizedBox(
-                  width: 80,
-                  height: 80,
-                  child: Icon(
-                    FontAwesomeIcons.squareJs,
-                    size: 60,
-                    color: Colors.grey,
-                  )),
-              SizedBox(
-                width: 5,
-              ),
-              SizedBox(
-                  width: 80,
-                  height: 80,
-                  child: Icon(
-                    FontAwesomeIcons.database,
-                    size: 60,
-                    color: Colors.grey,
-                  )),
+                  iconData: data,
+                ),
+              ],
             ],
           ),
           const SizedBox(
             height: 20,
           ),
           const Text(
-            "⚡ Develop highly interactive Front end / User Interfaces for your web and mobile applications",
+            description1,
             style: TextStyle(fontSize: 18),
           ),
           const Text(
-            "⚡ Progressive Web Applications ( PWA ) in normal and SPA Stacks",
+            description2,
             style: TextStyle(fontSize: 18),
           ),
           const Text(
-            "⚡ Integration of third party services such as Firebase/ AWS / Digital Ocean",
+            description3,
             style: TextStyle(fontSize: 18),
           ),
         ],
       ),
     );
+  }
+}
+
+class _SkillsIcon extends StatelessWidget {
+  final double width;
+  final double height;
+  final IconData iconData;
+  const _SkillsIcon({
+    required this.width,
+    required this.height,
+    required this.iconData,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+        width: width,
+        height: height,
+        child: Icon(
+          iconData,
+          size: 60,
+          color: Colors.grey,
+        ));
   }
 }
 
@@ -166,7 +119,7 @@ class SkillsLogoTab extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             const Text(
-              "What i do",
+              titleText,
               style: TextStyle(
                   fontWeight: FontWeight.w800, height: 1.0, fontSize: 50),
               textAlign: TextAlign.center,
@@ -175,7 +128,7 @@ class SkillsLogoTab extends StatelessWidget {
               height: 30,
             ),
             const Text(
-              "CRAZY FULL STACK DEVELOPER WHO WANTS TO EXPLORE EVERY TECH STACK",
+              subtitleText,
               style: TextStyle(
                 fontSize: 18,
               ),
@@ -184,125 +137,34 @@ class SkillsLogoTab extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                SizedBox(
+            Wrap(
+              alignment: WrapAlignment.center,
+              runAlignment: WrapAlignment.end,
+              crossAxisAlignment: WrapCrossAlignment.end,
+              spacing: 5,
+              children: [
+                for (IconData data in iconList) ...[
+                  _SkillsIcon(
                     width: 80,
                     height: 80,
-                    child: Icon(
-                      FontAwesomeIcons.html5,
-                      size: 60,
-                      color: Colors.grey,
-                    )),
-                SizedBox(
-                  width: 5,
-                ),
-                SizedBox(
-                    width: 80,
-                    height: 80,
-                    child: Icon(
-                      FontAwesomeIcons.css3,
-                      size: 60,
-                      color: Colors.grey,
-                    )),
-                SizedBox(
-                  width: 5,
-                ),
-                SizedBox(
-                    width: 80,
-                    height: 80,
-                    child: Icon(
-                      FontAwesomeIcons.android,
-                      size: 60,
-                      color: Colors.grey,
-                    )),
-                SizedBox(
-                  width: 5,
-                ),
-                SizedBox(
-                    width: 80,
-                    height: 80,
-                    child: Icon(
-                      FontAwesomeIcons.python,
-                      size: 60,
-                      color: Colors.grey,
-                    )),
-                SizedBox(
-                  width: 5,
-                ),
-                SizedBox(
-                    width: 80,
-                    height: 80,
-                    child: Icon(
-                      FontAwesomeIcons.node,
-                      size: 60,
-                      color: Colors.grey,
-                    )),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                SizedBox(
-                    width: 80,
-                    height: 80,
-                    child: Icon(
-                      FontAwesomeIcons.fire,
-                      size: 60,
-                      color: Colors.grey,
-                    )),
-                SizedBox(
-                  width: 5,
-                ),
-                SizedBox(
-                    width: 80,
-                    height: 80,
-                    child: Icon(
-                      FontAwesomeIcons.react,
-                      size: 60,
-                      color: Colors.grey,
-                    )),
-                SizedBox(
-                  width: 5,
-                ),
-                SizedBox(
-                    width: 80,
-                    height: 80,
-                    child: Icon(
-                      FontAwesomeIcons.squareJs,
-                      size: 60,
-                      color: Colors.grey,
-                    )),
-                SizedBox(
-                  width: 5,
-                ),
-                SizedBox(
-                    width: 80,
-                    height: 80,
-                    child: Icon(
-                      FontAwesomeIcons.database,
-                      size: 60,
-                      color: Colors.grey,
-                    )),
-                SizedBox(
-                  width: 5,
-                ),
+                    iconData: data,
+                  ),
+                ],
               ],
             ),
             const SizedBox(
               height: 20,
             ),
             const Text(
-              "⚡ Develop highly interactive Front end / User Interfaces for your web and mobile applications",
+              description1,
               style: TextStyle(fontSize: 20),
             ),
             const Text(
-              "⚡ Progressive Web Applications ( PWA ) in normal and SPA Stacks",
+              description2,
               style: TextStyle(fontSize: 20),
             ),
             const Text(
-              "⚡ Integration of third party services such as Firebase/ AWS / Digital Ocean",
+              description3,
               style: TextStyle(fontSize: 20),
             ),
           ],
@@ -324,7 +186,7 @@ class SkillsLogoMob extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             const Text(
-              "What i do",
+              titleText,
               style: TextStyle(
                   fontWeight: FontWeight.w800, height: 1.0, fontSize: 32),
               textAlign: TextAlign.center,
@@ -333,7 +195,7 @@ class SkillsLogoMob extends StatelessWidget {
               height: 30,
             ),
             const Text(
-              "CRAZY FULL STACK DEVELOPER WHO WANTS TO EXPLORE EVERY TECH STACK",
+              subtitleText,
               style: TextStyle(
                 fontSize: 16,
               ),
@@ -342,136 +204,40 @@ class SkillsLogoMob extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                SizedBox(
+            Wrap(
+              alignment: WrapAlignment.center,
+              runAlignment: WrapAlignment.end,
+              crossAxisAlignment: WrapCrossAlignment.end,
+              spacing: 5,
+              children: [
+                for (IconData data in iconList) ...[
+                  _SkillsIcon(
                     width: 80,
                     height: 80,
-                    child: Icon(
-                      FontAwesomeIcons.html5,
-                      size: 60,
-                      color: Colors.grey,
-                    )),
-                SizedBox(
-                  width: 5,
-                ),
-                SizedBox(
-                    width: 80,
-                    height: 80,
-                    child: Icon(
-                      FontAwesomeIcons.css3,
-                      size: 60,
-                      color: Colors.grey,
-                    )),
-                SizedBox(
-                  width: 5,
-                ),
-                SizedBox(
-                    width: 80,
-                    height: 80,
-                    child: Icon(
-                      FontAwesomeIcons.android,
-                      size: 60,
-                      color: Colors.grey,
-                    )),
-                SizedBox(
-                  width: 5,
-                ),
-                SizedBox(
-                    width: 80,
-                    height: 80,
-                    child: Icon(
-                      FontAwesomeIcons.python,
-                      size: 60,
-                      color: Colors.grey,
-                    )),
-                SizedBox(
-                  width: 5,
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                SizedBox(
-                    width: 80,
-                    height: 80,
-                    child: Icon(
-                      FontAwesomeIcons.fire,
-                      size: 60,
-                      color: Colors.grey,
-                    )),
-                SizedBox(
-                  width: 5,
-                ),
-                SizedBox(
-                    width: 80,
-                    height: 80,
-                    child: Icon(
-                      FontAwesomeIcons.react,
-                      size: 60,
-                      color: Colors.grey,
-                    )),
-                SizedBox(
-                  width: 5,
-                ),
-                SizedBox(
-                    width: 80,
-                    height: 80,
-                    child: Icon(
-                      FontAwesomeIcons.squareJs,
-                      size: 60,
-                      color: Colors.grey,
-                    )),
-                SizedBox(
-                  width: 5,
-                ),
-                SizedBox(
-                    width: 80,
-                    height: 80,
-                    child: Icon(
-                      FontAwesomeIcons.database,
-                      size: 60,
-                      color: Colors.grey,
-                    )),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                SizedBox(
-                    width: 80,
-                    height: 80,
-                    child: Icon(
-                      FontAwesomeIcons.node,
-                      size: 60,
-                      color: Colors.grey,
-                    )),
-                SizedBox(
-                  width: 5,
-                ),
+                    iconData: data,
+                  ),
+                ],
               ],
             ),
             const SizedBox(
               height: 20,
             ),
             const Text(
-              "⚡ Develop highly interactive Front end / User Interfaces for your web and mobile applications",
+              description1,
               style: TextStyle(fontSize: 16),
             ),
             const SizedBox(
               height: 10,
             ),
             const Text(
-              "⚡ Progressive Web Applications ( PWA ) in normal and SPA Stacks",
+              description2,
               style: TextStyle(fontSize: 16),
             ),
             const SizedBox(
               height: 10,
             ),
             const Text(
-              "⚡ Integration of third party services such as Firebase/ AWS / Digital Ocean",
+              description3,
               style: TextStyle(fontSize: 16),
             ),
           ],
