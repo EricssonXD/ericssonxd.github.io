@@ -284,9 +284,8 @@ class WelcomePageMob extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            Wrap(
-              alignment: WrapAlignment.center,
-              runAlignment: WrapAlignment.center,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: _contactList(isMobile: true),
             ),
             // Row(

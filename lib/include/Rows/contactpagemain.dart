@@ -214,151 +214,18 @@ class ContactPageTab extends StatelessWidget {
               height: 20,
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Expanded(
-                  child: SizedBox(
-                      width: 60,
-                      height: 60,
-                      child: IconButton(
-                        icon: const Icon(
-                          FontAwesomeIcons.facebook,
-                          color: Colors.blue,
-                          size: 40,
-                        ),
-                        onPressed: () {
-                          js.context.callMethod(
-                              "open", ["https://ericssonxd.github.io"]);
-                        },
-                      )),
-                ),
-                Expanded(
-                  child: SizedBox(
-                      width: 60,
-                      height: 60,
-                      child: IconButton(
-                        icon: const Icon(
-                          FontAwesomeIcons.twitter,
-                          color: Colors.lightBlue,
-                          size: 40,
-                        ),
-                        onPressed: () {
-                          js.context.callMethod(
-                              "open", ["https://ericssonxd.github.io"]);
-                        },
-                      )),
-                ),
-                Expanded(
-                  child: SizedBox(
-                      width: 60,
-                      height: 60,
-                      child: IconButton(
-                        icon: const Icon(
-                          FontAwesomeIcons.linkedin,
-                          color: Color.fromRGBO(40, 103, 178, 1),
-                          size: 40,
-                        ),
-                        onPressed: () {
-                          js.context.callMethod(
-                              "open", ["https://ericssonxd.github.io"]);
-                        },
-                      )),
-                ),
-                Expanded(
-                  child: SizedBox(
-                      width: 60,
-                      height: 60,
-                      child: IconButton(
-                        icon: const Icon(
-                          FontAwesomeIcons.bloggerB,
-                          color: Colors.red,
-                          size: 40,
-                        ),
-                        onPressed: () {
-                          js.context.callMethod(
-                              "open", ["https://ericssonxd.github.io"]);
-                        },
-                      )),
-                ),
-                Expanded(
-                  child: SizedBox(
-                      width: 60,
-                      height: 60,
-                      child: IconButton(
-                        icon: const Icon(
-                          FontAwesomeIcons.github,
-                          size: 40,
-                        ),
-                        onPressed: () {
-                          js.context.callMethod(
-                              "open", ["https://ericssonxd.github.io"]);
-                        },
-                      )),
-                ),
-                Expanded(
-                  child: SizedBox(
-                      width: 60,
-                      height: 60,
-                      child: IconButton(
-                        icon: const Icon(
-                          FontAwesomeIcons.gitlab,
-                          color: Colors.orange,
-                          size: 40,
-                        ),
-                        onPressed: () {
-                          js.context.callMethod(
-                              "open", ["https://ericssonxd.github.io"]);
-                        },
-                      )),
-                ),
-                Expanded(
-                  child: SizedBox(
-                      width: 60,
-                      height: 60,
-                      child: IconButton(
-                        icon: const Icon(
-                          FontAwesomeIcons.medium,
-                          size: 40,
-                        ),
-                        onPressed: () {
-                          js.context.callMethod(
-                              "open", ["https://ericssonxd.github.io"]);
-                        },
-                      )),
-                ),
-                Expanded(
-                  child: SizedBox(
-                      width: 60,
-                      height: 60,
-                      child: IconButton(
-                        icon: const Icon(
-                          FontAwesomeIcons.dev,
-                          size: 40,
-                        ),
-                        onPressed: () {
-                          js.context.callMethod(
-                              "open", ["https://ericssonxd.github.io"]);
-                        },
-                      )),
-                ),
-                Expanded(
-                  child: SizedBox(
-                      width: 60,
-                      height: 60,
-                      child: IconButton(
-                        icon: const Icon(
-                          FontAwesomeIcons.reddit,
-                          color: Colors.deepOrangeAccent,
-                          size: 40,
-                        ),
-                        onPressed: () {
-                          js.context.callMethod(
-                              "open", ["https://www.reddit.com/user/ericsson"]);
-                        },
-                      )),
-                ),
+                for (_SocialMediaListItem item in _socialMediaList)
+                  Expanded(
+                    child: _SocialMediaIcon(
+                      boxSize: 55,
+                      icon: item.icon,
+                      link: item.link,
+                      color: item.color,
+                    ),
+                  ),
               ],
-            ),
+            )
           ],
         ),
       ),

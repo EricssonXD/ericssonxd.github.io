@@ -4,6 +4,7 @@ import 'package:mygithubwebpage/include/CenteringOfPages/Achievement.dart';
 import 'package:mygithubwebpage/include/CenteringOfPages/ContactCenter.dart';
 import 'package:mygithubwebpage/include/CenteringOfPages/Education.dart';
 import 'package:mygithubwebpage/include/CenteringOfPages/skills_desk.dart';
+import 'package:mygithubwebpage/include/Rows/contactpagemain.dart';
 import 'package:mygithubwebpage/include/imagesmain/images.dart';
 import 'package:mygithubwebpage/include/Rows/progressbarmain.dart';
 import 'package:mygithubwebpage/include/Rows/skillslogosmain.dart';
@@ -114,10 +115,8 @@ class _HomeDesktopState extends State<HomeDesktop> {
                       ),
                       Row(
                         children: const [
-                          Expanded(child: ContactCenterDesk()),
-                          Expanded(
-                            child: FourDesk(),
-                          ),
+                          Expanded(child: ContactPageDesk()),
+                          Expanded(child: FourDesk()),
                         ],
                       ),
                       const SizedBox(
