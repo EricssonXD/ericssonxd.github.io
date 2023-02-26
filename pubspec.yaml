@@ -52,4 +52,9 @@ flutter:
       - asset: assets/fonts/icomoon.ttf
 
   assets:
-    - assets/
+    - assets/images/four.png
+    - assets/images/three.png
+    - assets/images/two.png
+    - assets/images/one.png
+    - assets/images/logos.png
+    - assets/images/hkust.png

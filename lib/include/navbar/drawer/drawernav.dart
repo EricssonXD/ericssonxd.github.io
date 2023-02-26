@@ -17,8 +17,8 @@ class NavigationDrawer extends StatelessWidget {
             DrawerItem('Skills', FontAwesomeIcons.listCheck, SkillsRoute),
             DrawerItem(
                 'Education', FontAwesomeIcons.graduationCap, EducationRoute),
-            DrawerItem(
-                'Open Source', FontAwesomeIcons.folderOpen, ProjectsRoute),
+            // DrawerItem(
+            //     'Open Source', FontAwesomeIcons.folderOpen, ProjectsRoute),
             DrawerItem(
                 'Achievements', FontAwesomeIcons.trophy, AchievementsRoute),
             // DrawerItem('Blogs', FontAwesomeIcons.bloggerB, BlogRoute),
