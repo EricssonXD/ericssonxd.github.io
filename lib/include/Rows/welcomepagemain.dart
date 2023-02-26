@@ -117,7 +117,7 @@ List<Widget> _contactList({bool isMobile = false}) => [
       ),
       _contactIcons(
         iconData: FontAwesomeIcons.github,
-        color: Colors.black,
+        // color: Colors.black,
         link: "https://www.github.com/ericssonxd",
         mobile: isMobile,
       ),
@@ -125,7 +125,7 @@ List<Widget> _contactList({bool isMobile = false}) => [
 
 Expanded _contactIcons({
   required IconData iconData,
-  required Color color,
+  Color? color,
   required String link,
   bool mobile = false,
 }) {
