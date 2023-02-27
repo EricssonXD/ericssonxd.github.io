@@ -1,4 +1,3 @@
-import 'package:dyn_mouse_scroll/dyn_mouse_scroll.dart';
 import 'package:flutter/gestures.dart';
 import 'package:mygithubwebpage/include/CenteringOfPages/Achievement.dart';
 import 'package:mygithubwebpage/include/CenteringOfPages/ContactCenter.dart';
@@ -14,30 +13,45 @@ import 'package:mygithubwebpage/pages/progresspage.dart';
 import 'package:mygithubwebpage/pages/welcome.dart';
 import 'package:flutter/material.dart';
 
-class HomeDesktop extends StatefulWidget {
-  const HomeDesktop({super.key});
+final _deskContent = [
+  Row(
+    children: const [
+      Expanded(child: WelcomePage()),
+      Expanded(child: OneDesk()),
+    ],
+  ),
+  Row(
+    children: const [
+      Expanded(child: TwoDesk()),
+      Expanded(child: SkillsLogoDesk()),
+    ],
+  ),
+  Row(
+    children: const [
+      Expanded(child: SkillBarDesk()),
+      Expanded(child: ThreeDesk()),
+    ],
+  ),
+  const EducationDesk(),
+  const AchievementDesk(),
+  // const BlogCenterDesk(),
+  Row(
+    children: const [
+      Expanded(child: ContactPageDesk()),
+      Expanded(child: FourDesk()),
+    ],
+  ),
+  // const SizedBox(
+  //   height: 25,
+  // ),
+  // const FooterPage(),
+];
 
-  @override
-  State<HomeDesktop> createState() => _HomeDesktopState();
-}
-
-class _HomeDesktopState extends State<HomeDesktop> {
-  final _controller = ScrollController();
-
-  @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
+class HomeDesktop extends StatelessWidget {
+  const HomeDesktop({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    debugPrint("Desktop");
     return SafeArea(
       child: ScrollConfiguration(
         behavior: ScrollConfiguration.of(context).copyWith(
@@ -48,96 +62,36 @@ class _HomeDesktopState extends State<HomeDesktop> {
             PointerDeviceKind.unknown,
           },
         ),
-        child: DynMouseScroll(
-          mobilePhysics: const AlwaysScrollableScrollPhysics(),
-          durationMS: 300,
-          builder: (context, controller, physics) => SingleChildScrollView(
-            physics: physics,
-            controller: controller,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Flexible(
-                  child: ListView(
-                    physics: const NeverScrollableScrollPhysics(),
-                    shrinkWrap: true,
-                    children: [
-                      Row(
-                        children: const <Widget>[
-                          Expanded(child: WelcomePage()),
-                          Expanded(child: OneDesk()),
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 75,
-                      ),
-                      Row(
-                        children: const <Widget>[
-                          Expanded(child: TwoDesk()),
-                          Expanded(child: SkillsLogoDesk()),
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 75,
-                      ),
-                      Row(
-                        children: const <Widget>[
-                          Expanded(child: SkillBarDesk()),
-                          Expanded(child: ThreeDesk()),
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 75,
-                      ),
-                      Row(
-                        children: const [
-                          Expanded(child: EducationDesk()),
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 75,
-                      ),
-                      Row(
-                        children: const [
-                          Expanded(child: AchievementDesk()),
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 75,
-                      ),
-                      // Row(
-                      //   children: const [
-                      //     Expanded(child: BlogCenterDesk()),
-                      //   ],
-                      // ),
-                      const SizedBox(
-                        height: 75,
-                      ),
-                      Row(
-                        children: const [
-                          Expanded(child: ContactPageDesk()),
-                          Expanded(child: FourDesk()),
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 100,
-                      ),
-                      Row(
-                        children: const [
-                          Expanded(child: FooterPage()),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
+        child: ListView.builder(
+          physics: const AlwaysScrollableScrollPhysics(),
+          shrinkWrap: true,
+          addAutomaticKeepAlives: true,
+          addRepaintBoundaries: true,
+          itemCount: _deskContent.length,
+          itemBuilder: (context, index) => Padding(
+            padding: const EdgeInsets.only(bottom: 75),
+            child: _deskContent[index],
           ),
         ),
       ),
     );
   }
 }
+
+final _mobContent = [
+  const WelcomePageMob(),
+  const OneMob(),
+  const SkillsMob(),
+  const ProgressPage(),
+  const EducationMob(),
+  const AchievementMob(),
+  // BlogCenterMob(),
+  const ContactCenterMob(),
+  const SizedBox(
+    height: 50,
+  ),
+  const FooterPage()
+];
 
 class HomeMobile extends StatelessWidget {
   const HomeMobile({super.key});
@@ -154,38 +108,32 @@ class HomeMobile extends StatelessWidget {
           PointerDeviceKind.unknown,
         },
       ),
-      child: SingleChildScrollView(
-        physics: const BouncingScrollPhysics(),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Flexible(
-              child: ListView(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                children: const <Widget>[
-                  WelcomePageMob(),
-                  OneMob(),
-                  SkillsMob(),
-                  ProgressPage(),
-                  EducationMob(),
-                  AchievementMob(),
-                  // BlogCenterMob(),
-                  ContactCenterMob(),
-                  SizedBox(
-                    height: 50,
-                  ),
-                  FooterPage()
-                ],
-              ),
-            ),
-          ],
-        ),
+      child: ListView.builder(
+        physics: const AlwaysScrollableScrollPhysics(),
+        shrinkWrap: true,
+        addAutomaticKeepAlives: true,
+        addRepaintBoundaries: true,
+        itemCount: _mobContent.length,
+        itemBuilder: (context, index) => _mobContent[index],
       ),
     );
   }
 }
+
+final _tabContent = [
+  const WelcomePageTab(),
+  const OneTab(),
+  const SkillsTab(),
+  const ProgressPage(),
+  const EducationTab(),
+  const AchievementTab(),
+  // BlogCenterTab(),
+  const ContactCenterTab(),
+  const SizedBox(
+    height: 50,
+  ),
+  const FooterMob(),
+];
 
 class HomeTab extends StatelessWidget {
   const HomeTab({super.key});
@@ -202,34 +150,13 @@ class HomeTab extends StatelessWidget {
           PointerDeviceKind.unknown,
         },
       ),
-      child: SingleChildScrollView(
+      child: ListView.builder(
         physics: const AlwaysScrollableScrollPhysics(),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Flexible(
-              child: ListView(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                children: const <Widget>[
-                  WelcomePageTab(),
-                  OneTab(),
-                  SkillsTab(),
-                  ProgressPage(),
-                  EducationTab(),
-                  AchievementTab(),
-                  // BlogCenterTab(),
-                  ContactCenterTab(),
-                  SizedBox(
-                    height: 50,
-                  ),
-                  FooterMob(),
-                ],
-              ),
-            ),
-          ],
-        ),
+        shrinkWrap: true,
+        addAutomaticKeepAlives: true,
+        addRepaintBoundaries: true,
+        itemCount: _tabContent.length,
+        itemBuilder: (context, index) => _tabContent[index],
       ),
     );
   }

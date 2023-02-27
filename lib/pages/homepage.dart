@@ -17,8 +17,8 @@ class HomePage extends StatelessWidget {
           children: <Widget>[
             Expanded(
               child: ScreenTypeLayout(
-                mobile: const CenteredViewMob(child: HomeMobile()),
-                desktop: const CenteredViewDesk(child: HomeDesktop()),
+                mobile: CenteredViewMob(child: HomeMobile()),
+                desktop: CenteredViewDesk(child: HomeDesktop()),
                 tablet: const CenteredViewTab(child: HomeTab()),
               ),
             ),

@@ -41,8 +41,23 @@ class NavigationBar extends StatelessWidget {
   }
 }
 
-class NavbarTbDt extends StatelessWidget {
+class NavbarTbDt extends StatefulWidget {
   const NavbarTbDt({super.key});
+
+  @override
+  State<NavbarTbDt> createState() => _NavbarTbDtState();
+}
+
+class _NavbarTbDtState extends State<NavbarTbDt> with TickerProviderStateMixin {
+  late TabController tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    tabController = TabController(length: 5, vsync: this);
+    // tabController.addListener(_onUpdate);
+  }
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -60,27 +75,29 @@ class NavbarTbDt extends StatelessWidget {
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
-                const NavbarItem('Home', HomeRoute),
-                const SizedBox(
-                  width: 30,
+                Flexible(
+                  fit: FlexFit.loose,
+                  child: TabBar(
+                    isScrollable: true,
+                    controller: tabController,
+                    onTap: (index) => locator<NavigationService>()
+                        .navigateTo(_navList[index].route),
+                    labelColor: Theme.of(context).brightness == Brightness.light
+                        ? Colors.black
+                        : Colors.white,
+                    tabs: [
+                      for (_ItemInfo item in _navList) ...[
+                        Tab(
+                          child: Text(
+                            item.title,
+                            style: const TextStyle(fontSize: 18),
+                          ),
+                        ),
+                      ],
+                      // NavbarItem('Home', HomeRoute),
+                    ],
+                  ),
                 ),
-                const NavbarItem('Skills', SkillsRoute),
-                const SizedBox(
-                  width: 30,
-                ),
-                const NavbarItem('Education', EducationRoute),
-                const SizedBox(
-                  width: 30,
-                ),
-                const NavbarItem('Achievements', AchievementsRoute),
-                const SizedBox(
-                  width: 30,
-                ),
-                // const NavbarItem('Blogs', BlogRoute),
-                // const SizedBox(
-                //   width: 30,
-                // ),
-                const NavbarItem('Contact', ContactRoute),
                 const SizedBox(
                   width: 10,
                 ),
@@ -139,3 +156,36 @@ class NavbarMob extends StatelessWidget {
     );
   }
 }
+
+class _ItemInfo {
+  final String title;
+  final String route;
+
+  const _ItemInfo({
+    required this.title,
+    required this.route,
+  });
+}
+
+const List<_ItemInfo> _navList = [
+  _ItemInfo(
+    title: "Home",
+    route: HomeRoute,
+  ),
+  _ItemInfo(
+    title: "Skills",
+    route: SkillsRoute,
+  ),
+  _ItemInfo(
+    title: "Education",
+    route: EducationRoute,
+  ),
+  _ItemInfo(
+    title: "Achievements",
+    route: AchievementsRoute,
+  ),
+  _ItemInfo(
+    title: "Contact",
+    route: ContactRoute,
+  ),
+];

@@ -9,8 +9,8 @@ class SkillsDesk extends StatelessWidget {
     return SingleChildScrollView(
       child: Row(
         children: const <Widget>[
-          TwoDesk(),
-          SkillsLogoDesk(),
+          Expanded(child: TwoDesk()),
+          Expanded(child: SkillsLogoDesk()),
         ],
       ),
     );
