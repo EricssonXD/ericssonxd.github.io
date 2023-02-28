@@ -23,7 +23,7 @@ class ContactPageDesk extends StatelessWidget {
             height: 10,
           ),
           const Text(
-            'DISCUSS A PROJECT OR JUST WANT TO SAY HI? MY INBOX IS OPEN FOR ALL.',
+            'Discuss a project or just want to say hi? My inbox is open for all.',
             style: TextStyle(color: Colors.grey, fontSize: 22),
           ),
           const SizedBox(
@@ -156,16 +156,18 @@ class ContactPageTab extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              "Contact Me",
-              style: TextStyle(
-                  fontWeight: FontWeight.w800, height: 1.0, fontSize: 50),
+            const Center(
+              child: Text(
+                "Contact Me",
+                style: TextStyle(
+                    fontWeight: FontWeight.w800, height: 1.0, fontSize: 50),
+              ),
             ),
             const SizedBox(
               height: 10,
             ),
             const Text(
-              'DISCUSS A PROJECT OR JUST WANT TO SAY HI? MY INBOX IS OPEN FOR ALL.',
+              'Discuss a Project or just want to say Hi? My inbox is open for all.',
               style: TextStyle(color: Colors.grey, fontSize: 22),
             ),
             const SizedBox(
@@ -241,18 +243,19 @@ class ContactPageMob extends StatelessWidget {
       child: SizedBox(
         width: 600,
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          // crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
               "Contact Me",
               style: TextStyle(
                   fontWeight: FontWeight.w800, height: 1.0, fontSize: 32),
+              textAlign: TextAlign.center,
             ),
             const SizedBox(
               height: 10,
             ),
             const Text(
-              'DISCUSS A PROJECT OR JUST WANT TO SAY HI? MY INBOX IS OPEN FOR ALL.',
+              'Discuss a Project or just want to say Hi? My inbox is open for all.',
               style: TextStyle(color: Colors.grey, fontSize: 18),
             ),
             const SizedBox(

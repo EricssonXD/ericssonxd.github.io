@@ -24,7 +24,7 @@ class AchieveDesk extends StatelessWidget {
           height: 10,
         ),
         const Text(
-          'ACHIEVEMENTS, CERTIFICATIONS AND SOME COOL STUFF THAT I HAVE DONE !',
+          'Achievements, Certifications and some Cool Stuff that I have done !',
           style: TextStyle(color: Colors.grey, fontSize: 22),
         ),
         const SizedBox(
@@ -78,7 +78,7 @@ class AchieveTab extends StatelessWidget {
               height: 10,
             ),
             const Text(
-              'ACHIEVEMENTS, CERTIFICATIONS AND SOME COOL STUFF THAT I HAVE DONE !',
+              'Achievements, Certifications and some Cool Stuff that I have done !',
               style: TextStyle(color: Colors.grey, fontSize: 22),
             ),
             const SizedBox(
@@ -130,7 +130,7 @@ class AchieveMob extends StatelessWidget {
               height: 10,
             ),
             const Text(
-              'ACHIEVEMENTS, CERTIFICATIONS AND SOME COOL STUFF THAT I HAVE DONE !',
+              'Achievements, Certifications and some Cool Stuff that I have done !',
               style: TextStyle(color: Colors.grey, fontSize: 18),
             ),
             const SizedBox(
@@ -195,7 +195,7 @@ class _AchievementItemBuilder {
           child: Icon(
             FontAwesomeIcons.youtube,
             size: iconSize,
-            color: Colors.redAccent,
+            color: Colors.red,
           ),
         ),
         inkWell: inkWellBuilder(

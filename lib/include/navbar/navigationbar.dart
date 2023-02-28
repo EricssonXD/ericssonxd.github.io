@@ -2,7 +2,6 @@ import 'package:mygithubwebpage/configure/centeredview.dart';
 import 'package:mygithubwebpage/configure/navigation_service.dart';
 import 'package:mygithubwebpage/configure/routing.dart';
 // ignore: avoid_web_libraries_in_flutter
-import 'dart:html' as html;
 
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
@@ -66,9 +65,9 @@ class _NavbarTbDtState extends State<NavbarTbDt> with TickerProviderStateMixin {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           GestureDetector(
-              onTap: () {
-                html.window.location.reload();
-              },
+              // onTap: () {
+              //   html.window.location.reload();
+              // },
               child: const NavbarLogo()),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
@@ -127,9 +126,9 @@ class NavbarMob extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
           GestureDetector(
-              onTap: () {
-                html.window.location.reload();
-              },
+              // onTap: () {
+              //   html.window.location.reload();
+              // },
               child: const NavbarLogo()),
           Expanded(
               child: Container(

@@ -72,9 +72,11 @@ class SkillBarTab extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            const Text(
-              _sectionTitle,
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 50),
+            const Center(
+              child: Text(
+                _sectionTitle,
+                style: TextStyle(fontWeight: FontWeight.w600, fontSize: 50),
+              ),
             ),
             const SizedBox(
               height: 30,
@@ -127,9 +129,11 @@ class SkillBarMob extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            const Text(
-              _sectionTitle,
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 32),
+            const Center(
+              child: Text(
+                _sectionTitle,
+                style: TextStyle(fontWeight: FontWeight.w600, fontSize: 32),
+              ),
             ),
             const SizedBox(
               height: 30,

@@ -52,6 +52,7 @@ class HomeDesktop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    debugPrint("Desktop");
     return SafeArea(
       child: ScrollConfiguration(
         behavior: ScrollConfiguration.of(context).copyWith(

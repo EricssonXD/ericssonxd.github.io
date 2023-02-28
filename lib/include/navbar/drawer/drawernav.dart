@@ -1,3 +1,4 @@
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mygithubwebpage/configure/navigation_service.dart';
 import 'package:mygithubwebpage/configure/routing.dart';
 import 'package:flutter/material.dart';
@@ -9,6 +10,7 @@ class NavigationDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      width: 0.6.sw < 304 ? 0.6.sw : 304,
       child: SizedBox(
         width: 300,
         child: ListView(
@@ -44,7 +46,7 @@ class DrawerItem extends StatelessWidget {
         Navigator.of(context).pop();
       },
       title: Padding(
-        padding: const EdgeInsets.only(left: 30, top: 30, bottom: 30),
+        padding: const EdgeInsets.only(left: 15, top: 30, bottom: 30),
         child: Row(
           children: <Widget>[
             Icon(icon),
@@ -53,7 +55,7 @@ class DrawerItem extends StatelessWidget {
             ),
             Text(
               title,
-              style: const TextStyle(fontSize: 18),
+              style: TextStyle(fontSize: 18.sp < 18 ? 18.sp : 18),
             ),
           ],
         ),

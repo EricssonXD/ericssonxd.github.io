@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mygithubwebpage/misc/icomoon_icons.dart';
 
-const String titleText = "What i do";
+const String titleText = "What I Do";
 const String subtitleText =
-    "DEVELOPER WHO WORKS HARD TO CREATE THE PERFECT PROGRAM SO I NEVER HAVE TO WORK AGAIN";
+    "I work hard to create Perfect Programs so everything would be easier for me in the Future";
 const String description1 = "⚡ Create Solutions to Problems by Coding";
 const String description2 = "";
 // "⚡ Progressive Web Applications ( PWA ) in normal and SPA Stacks";
@@ -116,7 +116,7 @@ class SkillsLogoTab extends StatelessWidget {
       child: SizedBox(
         width: 600,
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          // crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             const Text(
               titleText,
@@ -183,7 +183,6 @@ class SkillsLogoMob extends StatelessWidget {
       child: SizedBox(
         width: 600,
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             const Text(
               titleText,

@@ -115,9 +115,11 @@ class EduTab extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
-            'Education',
-            style: TextStyle(fontWeight: FontWeight.w600, fontSize: 50),
+          const Center(
+            child: Text(
+              'Education',
+              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 50),
+            ),
           ),
           for (final educationItem in educationList) ...[
             divider,
@@ -227,9 +229,11 @@ class EduMob extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
-            'Education',
-            style: TextStyle(fontWeight: FontWeight.w600, fontSize: 32),
+          const Center(
+            child: Text(
+              'Education',
+              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 32),
+            ),
           ),
           divider,
           for (final educationItem in educationList) ...[
