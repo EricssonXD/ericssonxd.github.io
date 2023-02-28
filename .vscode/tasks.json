@@ -47,6 +47,30 @@
 			"group": "build",
 			"label": "flutter: flutter pub run build_runner build",
 			"detail": ""
-		}
+		},
+		{
+			"type": "flutter",
+			"command": "flutter",
+			"args": [
+				"pub",
+				"run",
+				"flutter_native_splash:create",
+			],
+			"group": "build",
+			"label": "flutter: flutter build splash",
+			"detail": ""
+		},
+		{
+			"type": "flutter",
+			"command": "flutter",
+			"args": [
+				"pub",
+				"run",
+				"flutter_launcher_icons",
+			],
+			"group": "build",
+			"label": "flutter: flutter build icons",
+			"detail": ""
+		},
 	]
 }

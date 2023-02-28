@@ -23,7 +23,7 @@ class NavbarLogoDesk extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Image(
       alignment: Alignment.bottomLeft,
-      image: AssetImage('assets/icons/icon2.png'),
+      image: AssetImage('assets/icons/icon.png'),
     );
   }
 }
@@ -35,7 +35,7 @@ class NavbarLogoMob extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Image(
       alignment: Alignment.bottomLeft,
-      image: AssetImage('assets/icons/icon2.png'),
+      image: AssetImage('assets/icons/icon.png'),
     );
   }
 }
