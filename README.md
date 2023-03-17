@@ -1,2 +1,0 @@
-# EricssonXD's Personal Webpage
-
